@@ -1,54 +1,60 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #378740;
-}
-
-.container {
-    max-width: 1%;
-    margin: 20px auto;
+  }
+  
+  #app {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #fff; 
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
-}
-
-.photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.photo {
-    width: calc(25% - 10px);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.photo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.details {
-    margin-top: 20px;
-}
-
-button {
+  }
+  
+  form {
+    border: 1px solid #c5bfbf;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 50px;
+  }
+  
+  label {
     display: block;
-    margin: 20px auto;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  

@@ -34,9 +34,10 @@ body {
   nav ul li a {
     color: #fff;
     text-decoration: none;
+    border-radius: 5px;
   }
   
-  .hero {
+  .accueil-1 {
     background-size: cover;
     color: #fff;
     text-align: center;
@@ -53,7 +54,7 @@ body {
     height: 100%;
   }
   
-  .hero .content {
+  .accueil-1 .content {
     position: relative;
     z-index: 1;
   }
@@ -67,12 +68,12 @@ body {
   
   .feature {
     text-align: center;
-    margin: 0 20px;
+    margin: 40px;
   }
   
   .feature img {
-    width: 100px;
-    height: 100px;
+    width: 50%;
+    height: 50%;
   }
   
   footer {
@@ -88,4 +89,6 @@ body {
   .btn:visited{
     color: #2e98b0;
   }
+
+
   

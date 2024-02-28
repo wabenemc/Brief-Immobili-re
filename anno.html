@@ -1,29 +1,56 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publication de photos immobilières</title>
-    <link rel="stylesheet" href="./styce_ann.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déposer une annonce immobilière</title>
+<link rel="stylesheet" href="./styce_ann.css">
 </head>
-<body><h1>Apppartement</h1>
-    <div class="container">
-        
-        <div class="photos">
-            <div class="photo">
-                <img src="./Capture d’écran 2024-02-19 164551.png" alt="Chambre à coucher">
-                <p>Appartement</p>
-                <div class="details">
-                  <p>Nombre de chambres: 3</p>
-                  <p>Surface: 150 m²</p>
-                  <p>Emplacement: Paris, France</p>
-                  <!-- Ajoutez d'autres détails de la propriété ici -->
-             
-              </div>
-            </div>
-        </div>
-        
-        <!-- <button>Contactez-nous pour plus d'informations</button> -->
+<body>
+<div id="app">
+  <h1>Déposer votre annonce</h1>
+  <form id="annonceForm">
+    <div class="form-group">
+      <label for="titre">Titre de l'annonce:</label>
+      <input type="text" id="titre" name="titre" required>
     </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="prix">Prix:</label>
+      <input type="number" id="prix" name="prix" required>
+    </div>
+    <div class="form-group">
+      <label for="adresse">Adresse:</label>
+      <input type="text" id="adresse" name="adresse" required>
+    </div>
+    <div class="form-group">
+      <label for="typeBien">Type de bien:</label>
+      <select id="typeBien" name="typeBien" required>
+        <option value="appartement">Appartement</option>
+        <option value="maison">Maison</option>
+        <option value="terrain">Terrain</option>
+      </select>
+    </div>
+    <!-- Options spécifiques à chaque type de bien -->
+    <div id="optionsAppartement" class="form-group hidden">
+      <label for="etage">Étage:</label>
+      <input type="number" id="etage" name="etage">
+      <label><input type="checkbox" id="ascenseur" name="ascenseur"> Ascenseur</label>
+    </div>
+    <div id="optionsMaison" class="form-group hidden">
+      <label><input type="checkbox" id="jardin" name="jardin"> Jardin</label>
+      <label><input type="checkbox" id="garage" name="garage"> Garage</label>
+    </div>
+    <div id="optionsTerrain" class="form-group hidden">
+      <label for="surface">Surface:</label>
+      <input type="number" id="surface" name="surface">
+    </div>
+    <button type="submit">Déposer l'annonce</button>
+  </form>
+</div>
 </body>
 </html>
