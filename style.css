@@ -91,4 +91,20 @@ body {
   }
 
 
+
+  /* Style pour les écrans jusqu'à 768px de largeur */
+@media screen and (max-width: 400px) {
+  /* Styles CSS pour les petits écrans */
+}
+
+/* Style pour les écrans de 769px à 992px de largeur */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  /* Styles CSS pour les écrans moyens */
+}
+
+/* Style pour les écrans à partir de 993px de largeur */
+@media screen and (min-width: 993px) {
+  /* Styles CSS pour les grands écrans */
+}
+
   
