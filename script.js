@@ -3,13 +3,14 @@ const formulaire = document.getElementById("annonceForm");
 formulaire.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(formulaire);
-  let donneFormulaire = {
+  let dataFormulaire = {
     titre: formData.get("titre"),
     description: formData.get("description"),
     prix : formData.get('prix'),
     adresse : formData.get('adresse'),
     typeBien : formData.get('typeBien'),
   }
+ 
 });
 
 
@@ -81,11 +82,11 @@ class Maison extends BienImmobilier {
         this.#garage = garage;
     }
 
-    hasJardin() {
+    Jardin() {
         return this.#jardin;
     }
 
-    hasGarage() {
+    Garage() {
         return this.#garage;
     }
 }
@@ -103,20 +104,48 @@ class Terrain extends BienImmobilier {
     }
 }
 
-// Exemple d'utilisation
-let appartement1 = new Appartement(1, "Bel appartement", "Spacieux appartement en centre-ville", 200000, "123 Rue Principale", 2, true);
-let maison1 = new Maison(2, "Belle maison", "Grande maison avec jardin", 350000, "456 Avenue Royale", true, true);
-let terrain1 = new Terrain(3, "Grand terrain", "Terrain avec vue panoramique", 100000, "789 Chemin Champêtre", 1000);
+// Affichage conditionnelle type de bien 
 
-console.log(appartement1.getTitre());
-console.log(maison1.getDescription());
-console.log(terrain1.getPrix());
+function showOptions() {
+    let typeBien = document.getElementById("typeBien").value;
+    let optionsAppartement = document.getElementById("optionsAppartement");
+    let optionsMaison = document.getElementById("optionsMaison");
+    let optionsTerrain = document.getElementById("optionsTerrain");
+
+    // Masquer tous les champs d'abord
+    optionsAppartement.classList.add("hidden");
+    optionsMaison.classList.add("hidden");
+    optionsTerrain.classList.add("hidden");
+
+    // Afficher les champs correspondants au type de bien sélectionné
+    if (typeBien === "appartement") {
+      optionsAppartement.classList.remove("hidden");
+    } else if (typeBien === "maison") {
+      optionsMaison.classList.remove("hidden");
+    } else if (typeBien === "terrain") {
+      optionsTerrain.classList.remove("hidden");
+    }
+
+  }
+
+  
+
+// // Exemple d'utilisation
+// let appartement1 = new Appartement(1, "Bel appartement", "Spacieux appartement en centre-ville", 200000, "123 Rue Principale", 2, true);
+// let maison1 = new Maison(2, "Belle maison", "Grande maison avec jardin", 350000, "456 Avenue Royale", true, true);
+// let terrain1 = new Terrain(3, "Grand terrain", "Terrain avec vue panoramique", 100000, "789 Chemin Champêtre", 1000);
+
+// console.log(appartement1.getTitre());
+// console.log(maison1.getDescription());
+// console.log(terrain1.getPrix());
 
 
-
+// Local storage, sauvergarde de donne du formulaire 
   
 if (localStorage.length === 0) {
     console.log("Le localStorage est vide.");
 } else {
     console.log("Le localStorage n'est pas vide.");
 }
+
+
