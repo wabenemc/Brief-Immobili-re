@@ -1,98 +1,95 @@
 /* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url(./prise-vue-grand.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(./prise-vue-grand.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  header h1 {
-    margin: 0;
-    color: #3e90a3;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .accueil-1 {
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-    position: relative;
-  }
-  
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .accueil-1 .content {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .features {
-    display: flex;
-    justify-content: center;
-    padding: 50px 0;
-    background-color: #deeae0;
-  }
-  
-  .feature {
-    text-align: center;
-    margin: 40px;
-  }
-  
-  .feature img {
-    width: 50%;
-    height: 50%;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  .btn{
-    color: red;
-  }
-  .btn:visited{
-    color: #2e98b0;
-  }
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
 
+header h1 {
+  margin: 0;
+  color: #3e90a3;
+}
 
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Style pour les écrans jusqu'à 768px de largeur */
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.accueil-1 {
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.accueil-1 .content {
+  position: relative;
+  z-index: 1;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: #deeae0;
+}
+
+.feature {
+  text-align: center;
+  margin: 40px;
+}
+
+.feature img {
+  width: 50%;
+  height: 50%;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.btn {
+  color: red;
+}
+.btn:visited {
+  color: #2e98b0;
+}
+
+/* Style pour les écrans jusqu'à 768px de largeur */
 @media screen and (max-width: 400px) {
   /* Styles CSS pour les petits écrans */
 }
@@ -106,5 +103,3 @@ body {
 @media screen and (min-width: 993px) {
   /* Styles CSS pour les grands écrans */
 }
-
-  
