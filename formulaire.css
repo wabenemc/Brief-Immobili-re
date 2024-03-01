@@ -1,6 +1,4 @@
 /* styce_ann.css */
-body {
-}
 .form-groupe {
   border: #0e0c0c;
 }
@@ -36,4 +34,12 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.hidden{
+  display: none;
+}
+.retour{
+text-align: center;
+justify-content: center;
 }

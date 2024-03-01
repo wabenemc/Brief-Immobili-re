@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./styce_ann.css">
+  <link rel="stylesheet" href="./formulaire.css">
 </head>
 <body>
   <h1>Déposer votre annonce</h1>
-  <div id="annonces">
-    <!-- ******************* -->
-  </div>
   <div id="form-groupe">
+  
     
-  <form id="annonceForm">
+  <form id="annonceFormulaire">
     <div class="form-group">
       <label for="titre">Titre de l'annonce:</label>
       <input type="text" id="titre" name="titre" required>
@@ -37,6 +35,7 @@
     <div class="form-group">
       <label for="typeBien">Type de bien:</label>
       <select id="typeBien" name="typeBien" required>
+        <option value="" disabled selected>Choisir un type de bien</option>
         <option value="appartement">Appartement</option>
         <option value="maison">Maison</option>
         <option value="terrain">Terrain</option>
@@ -56,9 +55,11 @@
       <label for="surface">Surface:</label>
       <input type="number" id="surface" name="surface">
     </div>
-    <button type="submit">Déposer l'annonce</button>
+    <button type="submit" id="validerFormulaire">Déposer l'annonce</button>
   </form>
+  <div class="retour"><a href="index.html">Retour à l'accueil</a></div>
 </div>
 </div>
 </body>
+<script src="./script.js"></script>
 </html>

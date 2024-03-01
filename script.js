@@ -1,4 +1,4 @@
-const formulaire = document.getElementById("annonceForm");
+const formulaire = document.getElementById("annonceFormulaire");
 
 formulaire.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -10,6 +10,40 @@ formulaire.addEventListener("submit", (event) => {
     adresse: formData.get("adresse"),
     typeBien: formData.get("typeBien"),
   };
+
+  // Exemple d'utilisation
+  let appartement1 = new Appartement(
+    1,
+    "Bel appartement",
+    "Spacieux appartement en centre-ville",
+    200000,
+    "123 Rue Principale",
+    2,
+    true
+  );
+  let maison1 = new Maison(
+    2,
+    "Belle maison",
+    "Grande maison avec jardin",
+    350000,
+    "456 Avenue Royale",
+    true,
+    true
+  );
+  let terrain1 = new Terrain(
+    3,
+    "Grand terrain",
+    "Terrain avec vue panoramique",
+    100000,
+    "789 Chemin Champêtre",
+    1000
+  );
+
+  console.log(appartement1.getTitre());
+  console.log(maison1.getDescription());
+  console.log(terrain1.getPrix());
+
+  sauvegarderDonnees(dataFormulaire);
 });
 
 // Classe de base BienImmobilier avec des champs privés
@@ -19,7 +53,6 @@ class BienImmobilier {
   #description;
   #prix;
   #adresse;
-
   constructor(id, titre, description, prix, adresse) {
     this.#id = id;
     this.#titre = titre;
@@ -80,11 +113,11 @@ class Maison extends BienImmobilier {
     this.#garage = garage;
   }
 
-  Jardin() {
+  getJardin() {
     return this.#jardin;
   }
 
-  Garage() {
+  getGarage() {
     return this.#garage;
   }
 }
@@ -103,6 +136,10 @@ class Terrain extends BienImmobilier {
 }
 
 // Affichage conditionnelle type de bien (Formulaire)
+const typeBienSelect = document.getElementById("typeBien");
+
+// Ajout d'un écouteur d'événements pour l'événement change
+typeBienSelect.addEventListener("change", showOptions);
 
 function showOptions() {
   let typeBien = document.getElementById("typeBien").value;
@@ -125,100 +162,27 @@ function showOptions() {
   }
 }
 
-// Exemple d'utilisation
-let appartement1 = new Appartement(1, "Bel appartement", "Spacieux appartement en centre-ville", 200000, "123 Rue Principale", 2, true);
-let maison1 = new Maison(2, "Belle maison", "Grande maison avec jardin", 350000, "456 Avenue Royale", true, true);
-let terrain1 = new Terrain(3, "Grand terrain", "Terrain avec vue panoramique", 100000, "789 Chemin Champêtre", 1000);
-
-console.log(appartement1.getTitre());
-console.log(maison1.getDescription());
-console.log(terrain1.getPrix());
-
-// Local storage, sauvergarde de donne du formulaire
-
-if (localStorage.length === 0) {
-  console.log("Le localStorage est vide.");
-} else {
-  console.log("Le localStorage n'est pas vide.");
-}
-
-// Fonction pour sauvegarder les données du formulaire dans le localStorage
-function sauvegarderDonnees() {
-  const formTitre = document.getElementById("titre").value;
-  const formDescription = document.getElementById("description").value;
-  const formPrix = document.getElementById('prix').value;
-  const formAdresse = document.getElementById('adresse').value;
-
-  // Création d'un objet contenant les données du formulaire
-  const donneesFormulaire = {
-    titre: titre,
-    description: description,
-    prix: prix,
-    adresse: adresse,
-  };
-
-  // Stockage des données du formulaire dans le localStorage
-  localStorage.setItem("formulaire", JSON.stringify(donneesFormulaire));
-
+// Local storage, sauvegarde de données du formulaire
+function sauvegarderDonnees(dataFormulaire) {
+  localStorage.setItem("formulaire", JSON.stringify(dataFormulaire));
   alert("Données du formulaire sauvegardées avec succès !");
 }
 
 // Fonction pour récupérer les données du localStorage et les afficher
 function recupererDonnees() {
-  const donneesFormulaire = JSON.parse(localStorage.getItem("donneesFormulaire"));
+  const donneesFormulaire = JSON.parse(localStorage.getItem("formulaire"));
 
   if (donneesFormulaire) {
     const titre = donneesFormulaire.titre;
     const description = donneesFormulaire.description;
     const prix = donneesFormulaire.prix;
-    const adresse = donneesFormulaire.adesse;
+    const adresse = donneesFormulaire.adresse;
 
     console.log("titre :", titre);
     console.log("description :", description);
     console.log("prix", prix);
     console.log("adresse", adresse);
-
   } else {
     console.log("Aucune donnée de formulaire trouvée dans le localStorage.");
   }
-}
-
-// Appel de la fonction pour récupérer les données du localStorage
-recupererDonnees();
-
-
-
- // Création d'un objet représentant l'annonce
- const annonce = {
-    titre: titre,
-    description: description,
-    prix: prix,
-    adresse: adresse,
-    typeBien: typeBien
-  };
-
-  // Ajout de l'annonce à la liste
-  ajouterAnnonce(annonce);
-
-  // Effacer le formulaire après soumission
-  document.getElementById("annonceForm").reset();
-
-// Fonction pour ajouter une annonce à la liste
-function ajouterAnnonce(annonce) {
-  // Création d'un nouvel élément div pour représenter l'annonce
-  var divAnnonce = document.createElement("div");
-  divAnnonce.classList.add("annonce");
-
-  // Construction du contenu de l'annonce
-  let contenuAnnonce = "<p>" + annonce.titre + "</p>";
-  contenuAnnonce += "<p>Description: " + annonce.description + "</p>";
-  contenuAnnonce += "<p>Prix: " + annonce.prix + "</p>";
-  contenuAnnonce += "<p>Adresse: " + annonce.adresse + "</p>";
-  contenuAnnonce += "<p>Type de bien: " + annonce.typeBien + "</p>";
-
-  // Ajout du contenu à l'élément div
-  divAnnonce.innerHTML = contenuAnnonce;
-
-  // Ajout de l'annonce à la liste d'annonces
-  document.getElementById("annonces").appendChild(divAnnonce);
 }
