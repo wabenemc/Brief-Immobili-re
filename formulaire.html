@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./formulaire.css">
+</head>
+<body>
+  <h1>Déposer votre annonce</h1>
+  <div id="form-groupe">
+  
+    
+  <form id="annonceFormulaire">
+    <div class="form-group">
+      <label for="titre">Titre de l'annonce:</label>
+      <input type="text" id="titre" name="titre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="prix">Prix:</label>
+      <input type="number" id="prix" name="prix" required>
+    </div>
+
+    <div class="form-group">
+      <label for="adresse">Adresse:</label>
+      <input type="text" id="adresse" name="adresse" required>
+    </div>
+
+    <div class="form-group">
+      <label for="typeBien">Type de bien:</label>
+      <select id="typeBien" name="typeBien" required>
+        <option value="" disabled selected>Choisir un type de bien</option>
+        <option value="appartement">Appartement</option>
+        <option value="maison">Maison</option>
+        <option value="terrain">Terrain</option>
+      </select>
+    </div>
+    <!-- Options spécifiques à chaque type de bien -->
+    <div id="optionsAppartement" class="form-group hidden">
+      <label for="etage">Étage:</label>
+      <input type="number" id="etage" name="etage">
+      <label><input type="checkbox" id="ascenseur" name="ascenseur"> Ascenseur</label>
+    </div>
+    <div id="optionsMaison" class="form-group hidden">
+      <label><input type="checkbox" id="jardin" name="jardin"> Jardin</label>
+      <label><input type="checkbox" id="garage" name="garage"> Garage</label>
+    </div>
+    <div id="optionsTerrain" class="form-group hidden">
+      <label for="surface">Surface:</label>
+      <input type="number" id="surface" name="surface">
+    </div>
+    <button type="submit" id="validerFormulaire">Déposer l'annonce</button>
+  </form>
+  <div class="retour"><a href="index.html">Retour à l'accueil</a></div>
+</div>
+</div>
+</body>
+<script src="./script.js"></script>
+</html>
